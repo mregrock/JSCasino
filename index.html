@@ -4,87 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Симулятор онлайн-казино</title>
-    <link rel="stylesheet" href="styles.css">
+    <script src="app.js"></script>
 </head>
 <body>
-    <div class="casino-container">
-        <div class="slot-selector">
-            <select id="slotMachineSelect">
-                <option value="classic">Классический автомат</option>
-                <option value="fruits">Фруктовый автомат</option>
-                <option value="egypt">Египетский автомат</option>
-            </select>
-        </div>
-
-        <div class="slot-title">Барабаны игрового слота</div>
-
-        <div class="slot-machine">
-            <div class="reels-container">
-                <div class="reel" id="reel1">
-                    <!-- Символы будут добавлены через JavaScript -->
-                </div>
-                <div class="reel" id="reel2">
-                    <!-- Символы будут добавлены через JavaScript -->
-                </div>
-                <div class="reel" id="reel3">
-                    <!-- Will be added through JavaScript -->
-                </div>
-                <div class="reel" id="reel4">
-                    <!-- Will be added through JavaScript -->
-                </div>
-                <div class="reel" id="reel5">
-                    <!-- Will be added through JavaScript -->
-                </div>
-            </div>
-
-            <div class="paylines-info">
-                <div class="payline-indicator">Линии: 
-                    <span id="activeLinesCount">1</span>
-                </div>
-            </div>
-        </div>
-        
-        <div class="bottom-panel">
-            <div class="bonus-button">
-                <button id="buyBonusButton">Купить бонусную игру</button>
-            </div>
-            <div class="settings-panel">
-                <button id="settingsButton">Настройки</button>
-                <button id="soundButton">Звук</button>
-                <button id="instructionButton">Инструкция</button>
-            </div>
-        </div>
-        
-        <div class="control-panel">
-            <div class="bet-controls">
-                <button id="decreaseBet">-</button>
-                <span>Ставка монеты</span>
-                <button id="increaseBet">+</button>
-            </div>
-            <div class="bet-amount">
-                <span>Ставка в деньгах:</span>
-                <span id="betAmount">10</span>
-            </div>
-            <div class="max-bet">
-                <button id="maxBetButton">Макс. ставка</button>
-            </div>
-            <div class="play-button">
-                <button id="spinButton">Кнопка игры</button>
-            </div>
-            <div class="auto-play">
-                <button id="autoPlayButton">Автоповтор</button>
-            </div>
-            <div class="win-display">
-                <span>Выигрыш:</span>
-                <span id="winAmount">0</span>
-            </div>
-            <div class="balance-display">
-                <span>Текущий баланс:</span>
-                <span id="balance">1000</span>
-            </div>
-        </div>
-    </div>
-
-    <script src="script.js"></script>
+    <div id="casino-container"></div>
+    
+    <script>
+        // Инициализация приложения после загрузки страницы
+        window.addEventListener('load', function() {
+            // Вызываем функцию appOnlineCasino с параметрами
+            appOnlineCasino('casino-container', {
+                initialBalance: 1000,
+                initialBet: 10,
+                initialPaylines: 1,
+                cssPath: 'app.css',
+                jsonPath: null // Можно указать путь к JSON-файлу с настройками
+            });
+            
+            // Пример создания второго экземпляра приложения (если нужно)
+            /*
+            appOnlineCasino('casino-container-2', {
+                initialBalance: 2000,
+                initialBet: 20,
+                initialPaylines: 3,
+                cssPath: 'app.css'
+            });
+            */
+        });
+    </script>
 </body>
-</html>
+</html> 
